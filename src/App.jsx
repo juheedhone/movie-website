@@ -1,16 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Card = ({ title }) => {
+  const [hasLiked, setHasLiked] = useState(false);
+
+  useEffect(() => {
+    console.log(`${title} has been Liked : ${hasLiked} `);
+  });
   return (
     <div className="card">
       <h2>{title}</h2>
+
+      <button onClick={() => setHasLiked(!hasLiked)}>
+        {hasLiked ? "❤️" : "🤍"}
+      </button>
     </div>
   );
 };
 
 const App = () => {
-  const [hasLiked, setHasLiked] = useState(false);
-
   return (
     <div className="card-container">
       <h2>Function arrow component</h2>
