@@ -1,3 +1,5 @@
+import Search from "./component/Search";
+
 const App = () => {
   return (
     <main>
@@ -12,7 +14,7 @@ const App = () => {
           </h1>
         </header>
 
-        <p>Search</p>
+        <Search />
       </div>
     </main>
   );
